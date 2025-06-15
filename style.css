@@ -1,0 +1,77 @@
+<style>
+body {
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    background: #fff8f0;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ff7f50;
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.dukimg {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dukimg img {
+  display: inline-block;
+  max-width: 90%;
+  border-radius: 10px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+input, select {
+    padding: px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#menuAI {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+button:hover {
+    background-color: #ff5c25;
+}
+
+#result {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 2px solid #ffa787;
+    border-radius: 20px;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+</style>
