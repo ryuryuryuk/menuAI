@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>오늘의 메뉴 추천</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <h1>🍱 오늘의 메뉴 추천</h1>
+
+
+    <form id="menuAI">
+
+    <div class="dukimg">
+        <img src="./images/main.png" alt="덕새">
+    </div>
+
+    <label for="mood">
+        오늘 기분은?
+        <input type="text" id="mood" placeholder="ex: 기분이 가라앉았어" required/>
+    </label>
+    <br>
+
+    <label for="weather">
+        날씨는 어때?
+        <select id="weather">
+        <option>맑음</option>
+        <option>흐림</option>
+        <option>비</option>
+        <option>눈</option>
+        </select>
+    </label>
+    <br>
+
+    <label for="alone">
+        혼밥? 같이??
+        <select id="alone">
+        <option>혼밥</option>
+        <option>같이!</option>
+        </select>
+    </label>
+    <br>
+
+    <label for="type">
+        원하는 스타일은?
+        <input type="text" id="type" placeholder="ex: 따뜻한 국물" required/>
+    </label>
+    <br>
+
+    <button type="submit">메뉴 추천받기</button>
+
+    <br>
+    <div id="result"></div>
+
+    </form>
+
+
+
+    <script>
+        const form = document.getElementById("menuAI");
+        const resultDiv = document.getElementById("result");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const mood = document.getElementById("mood").value;
+            const weather = document.getElementById("weather").value; 
+            const alone = document.getElementById("alone").value; 
+            const type = document.getElementById("type").value; 
+            resultDiv.textContent = "메뉴를 불러오는 중입니다...";
+
+            try {
+                const response = await fetch("https://assign2-gold.vercel.app/api/duksungAI", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ mood, weather, alone, type }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            resultDiv.textContent = data.answer;
+        } else {
+            resultDiv.textContent = `오류: ${data.error}`;
+        }
+    } catch (err) {
+        resultDiv.textContent = "서버와 통신 중 오류가 발생했습니다.";
+        console.error(err);
+    }
+    });
+    </script>
+</body>
+</html>
