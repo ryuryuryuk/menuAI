@@ -22,6 +22,8 @@ gemini 2.0을 이용한 메뉴 추천 서비스
 
  - "오늘의 메뉴 추천" 서비스는 HTML, CSS, JavaScript를 사용하여 간단하게 구성함.
  - 덕성여자대학교 덕새 캐릭터를 이용한 서비스 이미지를 CHAT-GPT를 이용하여 생성함.
+
+<br>
    ![image](https://github.com/user-attachments/assets/521b84bc-6541-42f2-bad3-f02e229bcaa7)
 
 
